@@ -3,18 +3,18 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 function Photo() {
   const images = [
-    { src: '/images/1200px-haas-in-het-grasjpg.webp', alt: 'Зайці в траві' },
-    { src: '/images/1200px-hasebeioberwerbejpg.webp', alt: 'Зайці в полі' },
-    { src: '/images/european-hare-6121jpg.webp', alt: 'Європейський заєць' },
-    { src: '/images/fFKuESpf7VTCGBNPscig.webp', alt: 'Зайці на лузі' },
-    { src: '/images/halljnes.webp', alt: 'Зайці в лісі' },
-    { src: '/images/zu6YRoYqGYVyExZ54dDT.webp', alt: 'Зайці на лузі' }
+    { src: '/images/6ZnhoyEHR1DXXfR7Puhm.webp', alt: 'Пантера на дереві' },
+    { src: '/images/HiBp0ug5uOYo72BIanwh.webp', alt: 'Пантера та природа' },
+    { src: '/images/leopard-tree-adfjpg.webp', alt: 'Красива пантера' },
+    { src: '/images/leopardess-inquisitive-stare-19112013jpeg.webp', alt: 'Пантера в лісі' },
+    { src: '/images/o6dVyZ9x3ubXnQ7Ymsbz.webp' },
+    { src: '/images/Ta36FO7IzmQ8SWbfXmq8.webp', alt: 'Пантера в траві' }
   ];
 
   return (
     <main className="container px-4 py-4 flex-grow-1">
       <article>
-        <h2 className="h2 text-success mb-4">Фотогалерея зайців</h2>
+        <h2 className="h2 text-success mb-4">Фотогалерея пантер</h2>
         <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
           <div className="carousel-indicators">
             {images.map((_, index) => (
