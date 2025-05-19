@@ -26,7 +26,7 @@ function Header() {
               alt="Пантера" 
               className="site-logo rounded-circle me-2"
             />
-            <span className="fs-4">Сайт про Плямистих пантер</span>
+            <span className="fs-4">Сайт про пантер</span>
           </Link>
         </div>
 
