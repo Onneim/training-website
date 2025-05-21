@@ -89,10 +89,7 @@ describe('API вебдодатку сайту про пантер', () => {
                     expect(res.body).to.have.property('gender', panther.gender);
                     expect(res.body).to.have.property('description', panther.description);
                     expect(res.body).to.have.property('dateAdded');
-                    expect(res.body).to.have.property(
-                        'jumpHeight',
-                        panther.jumpHeight,
-                    );
+                    expect(res.body).to.have.property('jumpHeight', panther.jumpHeight);
                     expect(new Date(res.body.dateAdded)).to.be.instanceOf(Date);
                     done();
                 });
@@ -144,9 +141,7 @@ describe('API вебдодатку сайту про пантер', () => {
             const savedPanther = await testPanther.save();
 
             // Виконуємо GET-запит для отримання запису пантери за ID
-            const res = await chai
-                .request(app)
-                .get(`/api/panthers/${String(savedPanther._id)}`);
+            const res = await chai.request(app).get(`/api/panthers/${String(savedPanther._id)}`);
             expect(res).to.have.status(200);
             expect(res.body).to.have.property('name', 'Пантера гарна');
             expect(res.body).to.have.property('age', 1);
@@ -376,9 +371,7 @@ describe('API вебдодатку сайту про пантер', () => {
             const savedPanther = await testPanther.save();
 
             // Виконуємо DELETE-запит
-            const res = await chai
-                .request(app)
-                .delete(`/api/panthers/${String(savedPanther._id)}`);
+            const res = await chai.request(app).delete(`/api/panthers/${String(savedPanther._id)}`);
             expect(res).to.have.status(200);
             expect(res.body).to.have.property('message', 'Запис про пантеру видалено');
 
