@@ -1,18 +1,19 @@
 import { Schema, model } from 'mongoose';
 
-// Інтерфейс для об'єкта "Заєць"
-interface IRabbit {
-    name: string; // Ім'я зайця
-    age: number; // Вік зайця у роках
-    height: number; // Висота зайця в сантиметрах
-    weight: number; // Вага зайця в кілограмах
-    gender: 'male' | 'female'; // Стать зайця: 'male' - самець, 'female' - самка
-    description?: string; // Опис зайця (необов'язкове поле)
+// Інтерфейс для об'єкта "пантера"
+interface IPanther {
+    name: string; // Ім'я пантери
+    age: number; // Вік пантери у роках
+    height: number; // Висота пантери в сантиметрах
+    weight: number; // Вага пантери в кілограмах
+    gender: 'male' | 'female'; // Стать пантери: 'male' - самець, 'female' - самка
+    description?: string; // Опис пантери (необов'язкове поле)
     dateAdded: Date; // Дата додавання запису до бази даних
+    jumpHeight: string; //висота стрибка, метри
 }
 
-// Схема MongoDB для моделі "Заєць"
-const rabbitSchema = new Schema<IRabbit>({
+// Схема MongoDB для моделі "пантера"
+const pantherSchema = new Schema<IPanther>({
     name: {
         type: String,
         required: true, // Поле є обов'язковим
@@ -39,8 +40,12 @@ const rabbitSchema = new Schema<IRabbit>({
         type: Date,
         default: Date.now, // Значення за замовчуванням - поточна дата і час
     },
+    jumpHeight: {
+        type: String,
+        required: true, // Поле є обов'язковим
+    },
 });
 
 // Створення моделі Mongoose на основі схеми
-export const Rabbit = model<IRabbit>('Rabbit', rabbitSchema);
-export type { IRabbit }; // Експортуємо інтерфейс для використання в інших файлах
+export const Panther = model<IPanther>('Panther', pantherSchema);
+export type { IPanther }; // Експортуємо інтерфейс для використання в інших файлах
